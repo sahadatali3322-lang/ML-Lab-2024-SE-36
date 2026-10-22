@@ -1,0 +1,498 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "RaQtBa8_Ruoe"
+      },
+      "source": [
+        "# Machine Learning Lab 01 — Introduction to Python Programming\n",
+        "\n",
+        "Course: CS-3105 — Machine Learning  \n",
+        "Lab instructor: Engr. Muhammad Awais  \n",
+        "Student name: Sahadat Ali\n",
+        "Roll number: 2024-SE-36  \n",
+        "\n",
+        "## Instructions\n",
+        "- Complete each task in its own labelled section.\n",
+        "- Run each code cell and keep the output visible.\n",
+        "- Task 6 includes a short explanation in my own words.\n",
+        "- Before submission, use **Runtime → Restart and run all** in Google Colab and check that every cell runs without errors.\n",
+        "- Save/rename this notebook as `Lab01_RollNo_Name.ipynb`, replacing `RollNo` and `Name` with your own details.\n"
+      ],
+      "id": "RaQtBa8_Ruoe"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "LY5SUwl-Ruog"
+      },
+      "source": [
+        "## Task 1 — Power calculation\n",
+        "\n",
+        "**Question:** What is 7 to the power of 4?\n",
+        "\n",
+        "The `**` operator means exponentiation (raising a number to a power)."
+      ],
+      "id": "LY5SUwl-Ruog"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "HKcZG9q6Ruoh",
+        "outputId": "f6a3fd34-77da-4948-ffb7-4223d8ede57e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q1: 2401\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(\"Q1:\", 7 ** 4)"
+      ],
+      "id": "HKcZG9q6Ruoh"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "QEFCv8vuRuoi"
+      },
+      "source": [
+        "## Task 2 — Split a string into a list\n",
+        "\n",
+        "**Question:** Split `s = \"Hi there Sam!\"` into a list.\n",
+        "\n",
+        "The `.split()` method separates a string at whitespace by default."
+      ],
+      "id": "QEFCv8vuRuoi"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "id": "Mcv5AxauRuoi",
+        "outputId": "9c2bb39d-0974-44c6-af8d-588522722cb5",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q2: ['Hi', 'there', 'Sam!']\n"
+          ]
+        }
+      ],
+      "source": [
+        "s = \"Hi there Sam!\"\n",
+        "result = s.split()\n",
+        "print(\"Q2:\", result)"
+      ],
+      "id": "Mcv5AxauRuoi"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "dXqpLe0bRuoi"
+      },
+      "source": [
+        "## Task 3 — String formatting with `.format()`\n",
+        "\n",
+        "**Question:** Given `planet = \"Earth\"` and `diameter = 12742`, print exactly:\n",
+        "`The diameter of Earth is 12742 kilometers.`"
+      ],
+      "id": "dXqpLe0bRuoi"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "id": "yA6TtM5iRuoj",
+        "outputId": "4feb565b-0c6b-4498-dc06-a0f8674353d4",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q3: The diameter of Earth is 12742 kilometers.\n"
+          ]
+        }
+      ],
+      "source": [
+        "planet = \"Earth\"\n",
+        "diameter = 12742\n",
+        "sentence = \"The diameter of {} is {} kilometers.\".format(planet, diameter)\n",
+        "print(\"Q3:\", sentence)"
+      ],
+      "id": "yA6TtM5iRuoj"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "JAOkc13jRuoj"
+      },
+      "source": [
+        "## Task 4 — Indexing a nested list\n",
+        "\n",
+        "**Question:** Use indexing to retrieve `\"hello\"` from the nested list below.\n",
+        "\n",
+        "Indexing starts at `0`, so each bracket selects an item at that level."
+      ],
+      "id": "JAOkc13jRuoj"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "id": "xQnsZR3URuoj",
+        "outputId": "4282f17b-18da-48fb-ec1c-def50ec1f1be",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q4: hello\n"
+          ]
+        }
+      ],
+      "source": [
+        "lst = [1, 2, [3, 4], [5, [100, 200, [\"hello\"]], 23, 11], 1, 7]\n",
+        "answer = lst[3][1][2][0]\n",
+        "print(\"Q4:\", answer)"
+      ],
+      "id": "xQnsZR3URuoj"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "EfA1PNtdRuoj"
+      },
+      "source": [
+        "## Task 5 — Indexing a nested dictionary\n",
+        "\n",
+        "**Question:** Use indexing to retrieve `\"hello\"` from the nested dictionary below.\n",
+        "\n",
+        "Use dictionary keys to select values and list indices to select items inside lists."
+      ],
+      "id": "EfA1PNtdRuoj"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "id": "MCH3ABNARuok",
+        "outputId": "3c82faa5-b645-4972-db01-d2691f4fa90e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q5: hello\n"
+          ]
+        }
+      ],
+      "source": [
+        "d = {\n",
+        "    \"k1\": [\n",
+        "        1, 2, 3,\n",
+        "        {\n",
+        "            \"tricky\": [\n",
+        "                \"oh\", \"man\", \"inception\",\n",
+        "                {\"target\": [1, 2, 3, \"hello\"]}\n",
+        "            ]\n",
+        "        }\n",
+        "    ]\n",
+        "}\n",
+        "answer = d[\"k1\"][3][\"tricky\"][3][\"target\"][3]\n",
+        "print(\"Q5:\", answer)"
+      ],
+      "id": "MCH3ABNARuok"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Um-iVTpHRuol"
+      },
+      "source": [
+        "## Task 6 — Difference between a tuple and a list\n",
+        "\n",
+        "**Question:** What is the main difference between a tuple and a list?\n",
+        "\n",
+        "**Answer in my own words:** A list is mutable, which means its items can be changed after it is created. A tuple is immutable, which means its items cannot be changed after it is created. Lists are written with square brackets `[]`, while tuples are usually written with parentheses `()`.\n",
+        "\n",
+        "The small code example below demonstrates that a list item can be changed."
+      ],
+      "id": "Um-iVTpHRuol"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "metadata": {
+        "id": "iDnMgn5VRuol",
+        "outputId": "aca133ed-2837-4a1f-869b-6757433bb6ae",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q6 example — changed list: [99, 20, 30]\n",
+            "Q6 example — tuple: (10, 20, 30)\n"
+          ]
+        }
+      ],
+      "source": [
+        "my_list = [10, 20, 30]\n",
+        "my_list[0] = 99\n",
+        "print(\"Q6 example — changed list:\", my_list)\n",
+        "\n",
+        "my_tuple = (10, 20, 30)\n",
+        "print(\"Q6 example — tuple:\", my_tuple)"
+      ],
+      "id": "iDnMgn5VRuol"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "VxvsXhF_Ruom"
+      },
+      "source": [
+        "## Task 7 — Extract the domain from an email address\n",
+        "\n",
+        "**Question:** Write a function that grabs the domain from `\"user@domain.com\"`.\n",
+        "\n",
+        "The `.split(\"@\")` method divides the email at the `@` symbol; index `1` is the part after it."
+      ],
+      "id": "VxvsXhF_Ruom"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "id": "XgGT1kJ4Ruom",
+        "outputId": "717d881c-878a-4154-d087-8300152a4258",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q7: domain.com\n"
+          ]
+        }
+      ],
+      "source": [
+        "def get_domain(email):\n",
+        "    return email.split(\"@\")[1]\n",
+        "\n",
+        "print(\"Q7:\", get_domain(\"user@domain.com\"))"
+      ],
+      "id": "XgGT1kJ4Ruom"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ExpeBa3ORuom"
+      },
+      "source": [
+        "## Task 8 — Check whether “dog” occurs in a string\n",
+        "\n",
+        "**Question:** Write a function that returns `True` if `\"dog\"` is in a string, case-insensitively.\n",
+        "\n",
+        "Calling `.lower()` makes the check ignore uppercase/lowercase differences."
+      ],
+      "id": "ExpeBa3ORuom"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "id": "z2rezEsSRuom",
+        "outputId": "6f2431db-da50-4614-b4ec-d6ce79e7c803",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q8 example 1: True\n",
+            "Q8 example 2: False\n"
+          ]
+        }
+      ],
+      "source": [
+        "def has_dog(text):\n",
+        "    return \"dog\" in text.lower()\n",
+        "\n",
+        "print(\"Q8 example 1:\", has_dog(\"I have a DOG\"))\n",
+        "print(\"Q8 example 2:\", has_dog(\"I have a cat\"))"
+      ],
+      "id": "z2rezEsSRuom"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Aj0tePsmRuom"
+      },
+      "source": [
+        "## Task 9 — Count occurrences of “dog” case-insensitively\n",
+        "\n",
+        "**Question:** Write a function that counts how many times `\"dog\"` occurs in a string, ignoring case.\n",
+        "\n",
+        "The `.lower()` method normalizes the text, and `.count(\"dog\")` counts occurrences of that substring."
+      ],
+      "id": "Aj0tePsmRuom"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "metadata": {
+        "id": "k72Cjsm0Ruom",
+        "outputId": "beca1d62-7570-4819-bf2b-dbb94ef62240",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q9: 3\n"
+          ]
+        }
+      ],
+      "source": [
+        "def count_dog(text):\n",
+        "    return text.lower().count(\"dog\")\n",
+        "\n",
+        "print(\"Q9:\", count_dog(\"Dog and dog and DOG\"))"
+      ],
+      "id": "k72Cjsm0Ruom"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "y7W4efQVRuom"
+      },
+      "source": [
+        "## Task 10 — Speeding ticket function\n",
+        "\n",
+        "**Question:** Implement `caught_speeding(speed, is_birthday)` using these rules:\n",
+        "- Speed up to and including 60 mph: `\"No Ticket\"`\n",
+        "- Speed 61–80 mph: `\"Small Ticket\"`\n",
+        "- Speed 81 mph or higher: `\"Big Ticket\"`\n",
+        "- On a birthday, allow 5 mph more.\n",
+        "\n",
+        "A simple way to apply the birthday allowance is to subtract 5 from the recorded speed before checking the usual thresholds."
+      ],
+      "id": "y7W4efQVRuom"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 10,
+      "metadata": {
+        "id": "mSOgSxc0Ruom",
+        "outputId": "99e8dae6-81ed-4deb-bbaf-f536b3f1ceca",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Q10 test 1: No Ticket\n",
+            "Q10 test 2: Small Ticket\n",
+            "Q10 test 3: Big Ticket\n",
+            "Q10 birthday boundary: No Ticket\n"
+          ]
+        }
+      ],
+      "source": [
+        "def caught_speeding(speed, is_birthday):\n",
+        "    allowance = 5 if is_birthday else 0\n",
+        "    adjusted_speed = speed - allowance\n",
+        "\n",
+        "    if adjusted_speed <= 60:\n",
+        "        return \"No Ticket\"\n",
+        "    elif adjusted_speed <= 80:\n",
+        "        return \"Small Ticket\"\n",
+        "    else:\n",
+        "        return \"Big Ticket\"\n",
+        "\n",
+        "print(\"Q10 test 1:\", caught_speeding(60, False))   # No Ticket\n",
+        "print(\"Q10 test 2:\", caught_speeding(75, True))    # Small Ticket\n",
+        "print(\"Q10 test 3:\", caught_speeding(85, False))   # Big Ticket\n",
+        "print(\"Q10 birthday boundary:\", caught_speeding(65, True))  # No Ticket"
+      ],
+      "id": "mSOgSxc0Ruom"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "SNY-xO6gRuom"
+      },
+      "source": [
+        "## Final submission checklist\n",
+        "\n",
+        "- [ ] Rename the file to `Lab01_RollNo_Name.ipynb` using your actual roll number and name.\n",
+        "- [ ] Check that a labelled **Task 1** through **Task 10** section appears before each task's code.\n",
+        "- [ ] Run **Runtime → Restart and run all**.\n",
+        "- [ ] Confirm every output appears and there are no errors.\n",
+        "- [ ] Upload the notebook to the class portal before the deadline. The lecture file does not specify the exact deadline or portal URL.\n",
+        "\n",
+        "**Note:** The solutions follow the ten tasks in the provided lecture. Review and understand the code so you can explain it if your instructor asks."
+      ],
+      "id": "SNY-xO6gRuom"
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python",
+      "version": "3.13.5"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
